@@ -1,8 +1,7 @@
 {
   "name": "flow-plugins",
   "owner": {
-    "name": "Flow",
-    "url": "https://flow.inc"
+    "name": "Flow"
   },
   "description": "Official Claude plugins for Flow.",
   "plugins": [
