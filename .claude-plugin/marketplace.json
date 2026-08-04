@@ -1,24 +1,12 @@
 {
   "name": "flow-plugins",
   "owner": {
-    "name": "Flow",
-    "url": "https://flow.inc"
+    "name": "Flow"
   },
-  "description": "Official Claude plugins for Flow.",
   "plugins": [
     {
       "name": "flow",
-      "displayName": "Flow",
-      "source": "./plugins/flow",
-      "description": "Collaborate in Flow threads from Claude Cowork and Claude Code.",
-      "author": {
-        "name": "Flow",
-        "url": "https://flow.inc"
-      },
-      "homepage": "https://github.com/flow-communications/claude-cowork-plugin",
-      "repository": "https://github.com/flow-communications/claude-cowork-plugin",
-      "category": "productivity",
-      "tags": ["collaboration", "communication", "flow", "threads"]
+      "source": "./plugins/flow"
     }
   ]
 }
