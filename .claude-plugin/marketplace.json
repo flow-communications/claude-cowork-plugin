@@ -3,6 +3,7 @@
   "owner": {
     "name": "Flow"
   },
+  "description": "Official Claude plugins for Flow.",
   "plugins": [
     {
       "name": "flow",
