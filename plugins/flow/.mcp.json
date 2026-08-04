@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "flow": {
-      "command": "${CLAUDE_PLUGIN_ROOT}/bin/flow-mcp-launcher"
+      "command": "${FLOW_MCP_PATH:-/Applications/Flow.app/Contents/Resources/bin/flow-mcp}"
     }
   }
 }
