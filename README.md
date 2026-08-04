@@ -52,14 +52,14 @@ and handoffs are not yet exposed by the MCP server.
 ## Troubleshooting
 
 - **Flow MCP was not found:** update Flow and keep `Flow.app` in `/Applications`, then restart or
-  reload Claude. Developers can point the launcher at another build with `FLOW_MCP_PATH`.
+  reload Claude. Developers can point the plugin at another build with `FLOW_MCP_PATH`.
 - **Flow is unavailable:** open Flow Desktop and leave it running.
 - **Flow is not signed in:** sign in through Flow Desktop; never paste credentials into Claude.
 - **The plugin is blocked:** ask your administrator whether local development MCP servers are disabled.
 
 ## Development
 
-Validate the marketplace, plugin metadata, skill, MCP configuration, and launcher:
+Validate the marketplace, plugin metadata, skill, and MCP configuration:
 
 ```sh
 ./scripts/validate.sh
@@ -75,5 +75,5 @@ Load the plugin directly while iterating:
 claude --plugin-dir ./plugins/flow
 ```
 
-The launcher searches the system and user Applications folders, then Spotlight, for the Flow app. Set
-`FLOW_MCP_PATH` to an executable MCP development build when testing without an installed release.
+The plugin uses the helper at `/Applications/Flow.app/Contents/Resources/bin/flow-mcp` by default.
+Set `FLOW_MCP_PATH` to an executable MCP development build when testing without an installed release.
