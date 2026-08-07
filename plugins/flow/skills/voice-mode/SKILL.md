@@ -32,18 +32,29 @@ unit.
 
 ### Listening
 
-Run `flow voice listen --json` as a background or asynchronous job, never as a
-blocking foreground call. Blocking forces a choice between hearing the user and
-doing work, so the user talks into a void for as long as you work. Backgrounded,
-their speech reaches you at your next tool boundary.
+**The core rule: never take an action without a live listen covering it.** Any
+gap between listens is time the user is talking into a void. Before *every* tool
+call — not only after you speak — make sure a listen is either in flight or has
+just returned. Never run a sequence of tool calls with no listen among them. This
+is the rule most easily broken during a burst of work (searching, reading files,
+chaining fetches); that burst is exactly when the user is most likely trying to
+reach you, so it is exactly when you must keep listening.
 
-Re-arm first. The moment a listen returns, start the next one before you speak,
-edit, or run anything else. Any gap between listens is time the user cannot
-reach you.
+How you satisfy that rule depends on your harness:
 
-If your harness cannot background a command, poll `flow voice listen --timeout 0
---json` between steps instead. Never run a sequence of tool calls with no listen
-among them.
+- **If you can background a command** (e.g. Claude Code's shell): run
+  `flow voice listen --json` as a background/asynchronous job so it streams while
+  you work, never as a blocking foreground call. Re-arm it the moment it returns —
+  before you speak, edit, or run anything else.
+
+- **If your calls are strictly request-response and cannot be detached** (e.g. an
+  MCP tool harness such as Cowork, where a single tool call blocks until it
+  returns): you cannot truly background a listen. Instead, issue a zero-timeout
+  listen (`--timeout 0`, or the tool's equivalent) *in the same batch as* each
+  action you take, so the listen and the work run concurrently and the user's
+  speech reaches you at the same boundary you do the work. Pair every step this
+  way. Do not fire several actions and only then listen — a multi-step operation
+  is many short steps each carrying its own listen, not one long silent run.
 
 Your interruption granularity equals your longest single command. Prefer several
 short commands over one long one, and background long builds and test suites so
@@ -67,8 +78,12 @@ unavailable.` once the session has ended.
 
 ### Ending
 
-To end voice mode, use `flow voice stop`. The user also has the ability to end the voice
-session at their own discretion in the Flow app.
+To end voice mode, use `flow voice stop`. Do this when the user asks to end the voice session.
+
+The user also has the ability to end the voice session at their own discretion in the Flow app. 
+When this happens, the flow voice commands you run will let you know.
+
+### Example flow
 
 ```sh
 flow voice start --agent-name "Claude" --json
