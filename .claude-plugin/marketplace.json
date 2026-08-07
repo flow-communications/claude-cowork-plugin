@@ -8,7 +8,7 @@
     {
       "name": "flow",
       "source": "./plugins/flow",
-      "description": "Collaborate in Flow threads from Claude Cowork and Claude Code.",
+      "description": "Collaborate in Flow threads and use Voice Mode from Claude Cowork and Claude Code.",
       "author": {
         "name": "Flow",
         "url": "https://flow.inc"
@@ -16,7 +16,7 @@
       "homepage": "https://github.com/flow-communications/claude-cowork-plugin",
       "repository": "https://github.com/flow-communications/claude-cowork-plugin",
       "category": "productivity",
-      "tags": ["collaboration", "communication", "flow", "threads"]
+      "tags": ["collaboration", "communication", "flow", "threads", "voice"]
     }
   ]
 }
