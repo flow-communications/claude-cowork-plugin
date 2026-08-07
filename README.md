@@ -17,12 +17,12 @@ administrator may disable local MCP servers on managed devices.
 ## Install
 
 In Claude Cowork, open **Customize → Plugins**, add the GitHub marketplace
-`flow-communications/claude-cowork-plugin`, and install **Flow**.
+`flow-communications/flow-cowork-plugin`, and install **Flow**.
 
 From Claude Code, the equivalent commands are:
 
 ```text
-/plugin marketplace add flow-communications/claude-cowork-plugin
+/plugin marketplace add flow-communications/flow-cowork-plugin
 /plugin install flow@flow-plugins
 ```
 

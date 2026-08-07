@@ -7,7 +7,7 @@
     "name": "Flow",
     "url": "https://flow.inc"
   },
-  "homepage": "https://github.com/flow-communications/claude-cowork-plugin",
-  "repository": "https://github.com/flow-communications/claude-cowork-plugin",
+  "homepage": "https://github.com/flow-communications/flow-cowork-plugin",
+  "repository": "https://github.com/flow-communications/flow-cowork-plugin",
   "keywords": ["collaboration", "communication", "cowork", "flow", "threads", "voice"]
 }
