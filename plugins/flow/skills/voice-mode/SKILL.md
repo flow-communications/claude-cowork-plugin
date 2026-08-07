@@ -30,6 +30,8 @@ will assume your identity and pass messages from the user through to you, and vo
 messages from you back to the user. As far as the user can tell, you will be one cohesive
 unit.
 
+Do not stop listening or end your turn until the voice session is over.
+
 ### Listening
 
 **The core rule: never take an action without a live listen covering it.** Any
