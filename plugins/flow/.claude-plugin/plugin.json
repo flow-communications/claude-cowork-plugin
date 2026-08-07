@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "flow",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Collaborate in Flow threads and use Voice Mode from Claude Cowork and Claude Code through the local Flow desktop app.",
   "author": {
     "name": "Flow",
