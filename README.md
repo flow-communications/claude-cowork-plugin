@@ -1,7 +1,8 @@
 # Flow for Claude
 
-The official Flow plugin lets Claude Cowork and Claude Code read and contribute to your Flow Threads.
-It combines a Flow-specific skill with a local MCP connection supplied by the Flow desktop app.
+The official Flow plugin lets Claude Cowork and Claude Code read and contribute to your Flow Threads
+and talk with you through Flow Voice Mode. It combines Flow-specific skills with a local MCP
+connection supplied by the Flow desktop app.
 
 ## Requirements
 
@@ -34,12 +35,15 @@ Try prompts such as:
 - “Summarize the latest messages in the launch thread.”
 - “Send this update to the design review thread: …”
 - “Create a Flow thread with this kickoff message: …”
+- “Start voice mode so I can talk to you while you work.”
 
 ## How it works
 
 The plugin launches the `flow-mcp` helper bundled inside `Flow.app`. That helper speaks MCP over
-stdio and uses Flow Desktop's authenticated local connection. The plugin never stores Flow tokens or
-credentials, and it does not expose a network server.
+stdio and uses Flow Desktop's authenticated local connection. For Voice Mode, the bundled skill
+uses Flow's local `flow voice` interface to handle microphone input, transcription, and speech
+playback while Claude continues working. The plugin never stores Flow tokens or credentials, and
+it does not expose a network server.
 
 Reading a Thread does not post anything or add Claude as a participant. Creating a Thread or sending
 a Message is visible to other participants; contributing to a delegated Thread also joins Claude to

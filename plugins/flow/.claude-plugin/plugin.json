@@ -1,13 +1,13 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "flow",
-  "version": "0.3.0",
-  "description": "Collaborate in Flow threads from Claude Cowork and Claude Code through the local Flow desktop app.",
+  "version": "0.4.0",
+  "description": "Collaborate in Flow threads and use Voice Mode from Claude Cowork and Claude Code through the local Flow desktop app.",
   "author": {
     "name": "Flow",
     "url": "https://flow.inc"
   },
   "homepage": "https://github.com/flow-communications/claude-cowork-plugin",
   "repository": "https://github.com/flow-communications/claude-cowork-plugin",
-  "keywords": ["collaboration", "communication", "cowork", "flow", "threads"]
+  "keywords": ["collaboration", "communication", "cowork", "flow", "threads", "voice"]
 }
